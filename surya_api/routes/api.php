@@ -1,23 +1,13 @@
 <?php
 
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\AuthController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| API Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register API routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| is assigned the "api" middleware group. Enjoy building your API!
-|
-*/
-
 Route::prefix('students')->group(function () {
-    //http://127.0.0.1:8000/api/students
-    Route::get('/', [StudentController::class, 'index']);
+    // http://127.0.0.1:8000/api/students
+    Route::get('/', [StudentController::class, 'index'])->middleware('auth:sanctum');
 
     // http://127.0.0.1:8000/api/students
     // {
@@ -28,7 +18,7 @@ Route::prefix('students')->group(function () {
     // }
     Route::post('/', [StudentController::class, 'store']);
 
-    //http://127.0.0.1:8000/api/students/{id}
+    // http://127.0.0.1:8000/api/students/{id}
     Route::get('{id}', [StudentController::class, 'show']);
 
     // http://127.0.0.1:8000/api/students/{id}
@@ -40,6 +30,9 @@ Route::prefix('students')->group(function () {
     // }
     Route::put('{id}', [StudentController::class, 'update']);
 
-    //http://127.0.0.1:8000/api/students/{id}
+    // http://127.0.0.1:8000/api/students/{id}
     Route::delete('{id}', [StudentController::class, 'destroy']);
 });
+
+Route::post('/register', [AuthController::class, 'register']);
+Route::post('/login', [AuthController::class, 'login']);

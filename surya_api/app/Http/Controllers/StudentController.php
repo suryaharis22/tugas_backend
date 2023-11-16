@@ -23,7 +23,7 @@ class StudentController extends Controller
     {
         $this->validate($request, [
             'nama' => 'required',
-            'nim' => 'required',
+            'nim' => 'numeric|required',
             'email' => 'required|email',
             'jurusan' => 'required'
         ]);
