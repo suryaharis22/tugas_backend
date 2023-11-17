@@ -1,38 +1,34 @@
 <?php
 
-use App\Http\Controllers\StudentController;
-use App\Http\Controllers\AuthController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\StudentController;
+use App\Http\Controllers\UserController;
 
-Route::prefix('students')->group(function () {
-    // http://127.0.0.1:8000/api/students
-    Route::get('/', [StudentController::class, 'index'])->middleware('auth:sanctum');
+/*
+|--------------------------------------------------------------------------
+| API Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register API routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| is assigned the "api" middleware group. Enjoy building your API!
+|
+*/
 
-    // http://127.0.0.1:8000/api/students
-    // {
-    //     "nama": "Nama Siswa",
-    //     "nim": "NIM Siswa",
-    //     "email": "email@siswa.com",
-    //     "jurusan": "Jurusan Siswa"
-    // }
-    Route::post('/', [StudentController::class, 'store']);
+// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
 
-    // http://127.0.0.1:8000/api/students/{id}
-    Route::get('{id}', [StudentController::class, 'show']);
+Route::post('/register', [UserController::class, 'register']);
+Route::post('/login', [UserController::class, 'login']);
 
-    // http://127.0.0.1:8000/api/students/{id}
-    // {
-    //     "nama": "Nama Siswa yang Diperbarui",
-    //     "nim": "NIM Siswa yang Diperbarui",
-    //     "email": "email@siswa.com",
-    //     "jurusan": "Jurusan yang Diperbarui"
-    // }
-    Route::put('{id}', [StudentController::class, 'update']);
-
-    // http://127.0.0.1:8000/api/students/{id}
-    Route::delete('{id}', [StudentController::class, 'destroy']);
+Route::middleware(['auth:sanctum'])->group(function () {
+    Route::prefix('students')->group(function () {
+        Route::get('/', [StudentController::class, 'index']);
+        Route::get('/{studentModel}', [StudentController::class, 'show']);
+        Route::post('/', [StudentController::class, 'store']);
+        Route::put('/{studentModel}', [StudentController::class, 'update']);
+        Route::delete('/{studentModel}', [StudentController::class, 'destroy']);
+    });
 });
-
-Route::post('/register', [AuthController::class, 'register']);
-Route::post('/login', [AuthController::class, 'login']);
