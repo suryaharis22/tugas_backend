@@ -51,16 +51,21 @@ class StudentController extends Controller
         // Add sorting to the query
         $query->orderBy($sort, $order);
 
-        // Get the result of the query
-        $students = $query->get();
+        // Get the result of the query with pagination
+        $perPage = $request->query('per_page', 10);
+        $students = $query->paginate($perPage);
 
         $data = [
+            'row_count' => count($students->items()),
             'message' => 'success',
-            'data' => $students
+            'total_rows' => $students->total(),
+            'total_pages' => $students->lastPage(),
+            'current_page' => $students->currentPage(),
+            'data' => $students->items(),
         ];
-
         return response()->json($data, 200);
     }
+
 
     /**
      * Store a newly created resource in storage.
@@ -71,17 +76,21 @@ class StudentController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'nama' => 'required',
-            'nim' => 'required',
-            'email' => 'required|email',
-            'jurusan' => 'required'
+            'students' => 'required|array',
+            'students.*.nama' => 'required',
+            'students.*.nim' => 'required',
+            'students.*.email' => 'required|email',
+            'students.*.jurusan' => 'required'
         ]);
 
-        $student = StudentModel::create($request->all());
+        $studentsData = $request->input('students');
+
+        // Use Eloquent's insert method for bulk insertion
+        $students = StudentModel::insert($studentsData);
 
         $data = [
-            'message' => 'Student created successfully',
-            'data' => $student
+            'message' => 'Students created successfully',
+            'data' => $students
         ];
 
         return response()->json($data, 201);
