@@ -1,0 +1,207 @@
+{
+	"info": {
+		"_postman_id": "cf28248e-72df-4705-ab73-75201da801d9",
+		"name": "surya UTS3",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28423551"
+	},
+	"item": [
+		{
+			"name": "New Request",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/patients",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"patients"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "2|TYyMB3u5GVPpP0aa5ODpz4QO49D6fiCUTL2KXqnD9a559c73",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"name\": \"John Doe\",\r\n        \"address\": \"123 Main St\",\r\n        \"status\": \"positive\",\r\n        \"tanggal_masuk\": \"2023-01-01\"\r\n    },\r\n    {\r\n        \"name\": \"Jane Smith\",\r\n        \"address\": \"456 Oak St\",\r\n        \"status\": \"negative\",\r\n        \"tanggal_masuk\": \"2023-01-02\"\r\n    },\r\n    {\r\n        \"name\": \"Alice Johnson\",\r\n        \"address\": \"789 Pine St\",\r\n        \"status\": \"meninggal\",\r\n        \"tanggal_masuk\": \"2023-01-03\"\r\n    },\r\n    {\r\n        \"name\": \"Bob Williams\",\r\n        \"address\": \"101 Elm St\",\r\n        \"status\": \"positive\",\r\n        \"tanggal_masuk\": \"2023-01-04\"\r\n    },\r\n    {\r\n        \"name\": \"Charlie Brown\",\r\n        \"address\": \"202 Birch St\",\r\n        \"status\": \"negative\",\r\n        \"tanggal_masuk\": \"2023-01-05\"\r\n    },\r\n    {\r\n        \"name\": \"David Lee\",\r\n        \"address\": \"303 Maple St\",\r\n        \"status\": \"meninggal\",\r\n        \"tanggal_masuk\": \"2023-01-06\"\r\n    },\r\n    {\r\n        \"name\": \"Eva Davis\",\r\n        \"address\": \"404 Cedar St\",\r\n        \"status\": \"positive\",\r\n        \"tanggal_masuk\": \"2023-01-07\"\r\n    },\r\n    {\r\n        \"name\": \"Frank White\",\r\n        \"address\": \"505 Walnut St\",\r\n        \"status\": \"negative\",\r\n        \"tanggal_masuk\": \"2023-01-08\"\r\n    },\r\n    {\r\n        \"name\": \"Grace Miller\",\r\n        \"address\": \"606 Pine St\",\r\n        \"status\": \"meninggal\",\r\n        \"tanggal_masuk\": \"2023-01-09\"\r\n    },\r\n    {\r\n        \"name\": \"Henry Moore\",\r\n        \"address\": \"707 Oak St\",\r\n        \"status\": \"positive\",\r\n        \"tanggal_masuk\": \"2023-01-10\"\r\n    },\r\n    {\r\n        \"name\": \"Ivy Harris\",\r\n        \"address\": \"808 Birch St\",\r\n        \"status\": \"negative\",\r\n        \"tanggal_masuk\": \"2023-01-11\"\r\n    },\r\n    {\r\n        \"name\": \"Jack Robinson\",\r\n        \"address\": \"909 Elm St\",\r\n        \"status\": \"meninggal\",\r\n        \"tanggal_masuk\": \"2023-01-12\"\r\n    },\r\n    {\r\n        \"name\": \"Kelly Taylor\",\r\n        \"address\": \"1010 Cedar St\",\r\n        \"status\": \"positive\",\r\n        \"tanggal_masuk\": \"2023-01-13\"\r\n    },\r\n    {\r\n        \"name\": \"Liam Clark\",\r\n        \"address\": \"1111 Walnut St\",\r\n        \"status\": \"negative\",\r\n        \"tanggal_masuk\": \"2023-01-14\"\r\n    },\r\n    {\r\n        \"name\": \"Mia Turner\",\r\n        \"address\": \"1212 Pine St\",\r\n        \"status\": \"meninggal\",\r\n        \"tanggal_masuk\": \"2023-01-15\"\r\n    },\r\n    {\r\n        \"name\": \"Noah Scott\",\r\n        \"address\": \"1313 Oak St\",\r\n        \"status\": \"positive\",\r\n        \"tanggal_masuk\": \"2023-01-16\"\r\n    },\r\n    {\r\n        \"name\": \"Olivia King\",\r\n        \"address\": \"1414 Birch St\",\r\n        \"status\": \"negative\",\r\n        \"tanggal_masuk\": \"2023-01-17\"\r\n    },\r\n    {\r\n        \"name\": \"Peter Garcia\",\r\n        \"address\": \"1515 Elm St\",\r\n        \"status\": \"meninggal\",\r\n        \"tanggal_masuk\": \"2023-01-18\"\r\n    },\r\n    {\r\n        \"name\": \"Quinn Davis\",\r\n        \"address\": \"1616 Cedar St\",\r\n        \"status\": \"positive\",\r\n        \"tanggal_masuk\": \"2023-01-19\"\r\n    },\r\n    {\r\n        \"name\": \"Rose White\",\r\n        \"address\": \"1717 Walnut St\",\r\n        \"status\": \"negative\",\r\n        \"tanggal_masuk\": \"2023-01-20\"\r\n    },\r\n    {\r\n        \"name\": \"Samuel Taylor\",\r\n        \"address\": \"1818 Pine St\",\r\n        \"status\": \"meninggal\",\r\n        \"tanggal_masuk\": \"2023-01-21\"\r\n    },\r\n    {\r\n        \"name\": \"Tina Clark\",\r\n        \"address\": \"1919 Oak St\",\r\n        \"status\": \"positive\",\r\n        \"tanggal_masuk\": \"2023-01-22\"\r\n    },\r\n    {\r\n        \"name\": \"Ulysses Turner\",\r\n        \"address\": \"2020 Birch St\",\r\n        \"status\": \"negative\",\r\n        \"tanggal_masuk\": \"2023-01-23\"\r\n    },\r\n    {\r\n        \"name\": \"Victoria King\",\r\n        \"address\": \"2121 Elm St\",\r\n        \"status\": \"meninggal\",\r\n        \"tanggal_masuk\": \"2023-01-24\"\r\n    },\r\n    {\r\n        \"name\": \"William Garcia\",\r\n        \"address\": \"2222 Cedar St\",\r\n        \"status\": \"positive\",\r\n        \"tanggal_masuk\": \"2023-01-25\"\r\n    },\r\n    {\r\n        \"name\": \"Xavier Davis\",\r\n        \"address\": \"2323 Walnut St\",\r\n        \"status\": \"negative\",\r\n        \"tanggal_masuk\": \"2023-01-26\"\r\n    },\r\n    {\r\n        \"name\": \"Yasmine White\",\r\n        \"address\": \"2424 Pine St\",\r\n        \"status\": \"meninggal\",\r\n        \"tanggal_masuk\": \"2023-01-27\"\r\n    },\r\n    {\r\n        \"name\": \"Zachary Taylor\",\r\n        \"address\": \"2525 Oak St\",\r\n        \"status\": \"positive\",\r\n        \"tanggal_masuk\": \"2023-01-28\"\r\n    },\r\n    {\r\n        \"name\": \"Emma Smith\",\r\n        \"address\": \"2626 Birch St\",\r\n        \"status\": \"negative\",\r\n        \"tanggal_masuk\": \"2023-01-29\"\r\n    },\r\n    {\r\n        \"name\": \"Daniel Brown\",\r\n        \"address\": \"2727 Elm St\",\r\n        \"status\": \"meninggal\",\r\n        \"tanggal_masuk\": \"2023-01-30\"\r\n    }\r\n]\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/patients/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"patients",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Bintang\",\r\n    \"address\": \"Updated Address\",\r\n    \"status\": \"positive\",\r\n    \"tanggal_masuk\": \"2023-11-11\",\r\n    \"tanggal_keluar\": \"2023-11-11\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/patients/3",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"patients",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/patients/4",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"patients",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"surya\",\r\n    \"email\":\"surya@gmail.com\",\r\n    \"password\":\"password\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/register",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"surya@gmail.com\",\r\n    \"password\":\"password\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/login",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
