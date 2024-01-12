@@ -30,7 +30,6 @@ class StudentController {
             console.error("Error adding student to the database:", error);
 
             if (error.name === 'SequelizeValidationError') {
-                // Handle validation errors more gracefully
                 const validationErrors = error.errors.map(err => ({
                     message: err.message,
                     field: err.path,
